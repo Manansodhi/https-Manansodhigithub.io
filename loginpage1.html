@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login system</title>
+    <link href="https://fonts.googleapis.com/css?family-baloo+tammudu+2&display=swap" rel+"stylesheet">
+    <a href="#"></a>
+</head>
+<body>
+
+     <div class="menu-bar">
+    <ul>
+        <li class="active"><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="#"><i class="fa fa-user"></i>About Us</a>
+          <div class ="sub-menu-1">
+               <ul>
+                   <li><a herf="#">Mission</a></li>
+                   <li><a herf="#">Vission</a></li>
+                   <li><a herf="#">Achievments</a></li>
+               </ul>
+           </div>
+        </li>
+        <li><a href="websiteservicessection.html"><i class="fa fa-clone"></i>Services</a>
+         <div class ="sub-menu-1">
+               <ul>
+                   <li><a herf="#">Web desinging</a></li>
+                   <li class="hover-me"><a herf="#">Marketing</a><i class="fa fa-angle-right"></i>
+                         <div class="sub-menu-2">
+                           <ul>
+                                <li><a herf="#">SEO</a></li>
+                                <li><a herf="#">Social Media</a></li>
+                                <li><a herf="#">Eminal Marketing</a></li>
+                           </ul>
+                         </div>
+                   </li>
+                   <li class="hover-me"><a herf="#">Mobile App</a><i class="fa fa-angle-right"></i>
+                       <div class="sub-menu-2">
+                          <ul>
+                             <li><a herf="#">Android App</a></li>
+                             <li><a herf="#">iOS App</a></li>
+                             <li><a herf="#">Flutter App</a></li>
+                         </ul>
+                     </div>
+               </ul>
+           </div>
+        </li>
+        <li><a href="#"><i class="fa fa-users"></i>Clients</a></li>
+        <li><a href="#"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+        <li><a href="loginpage1.html"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+    </ul>
+   </div>
+
+    <style>
+
+        body{
+            background-image: url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .menu-bar {
+            background: rgb(0,128,128);
+            text-align: center;
+        }
+        .menu-bar ul {
+            display: inline-flex;
+            list-style: none;
+            color: white;
+        }
+        .menu-bar ul li {
+            width: 120px;
+            margin: 15px;
+            padding: 15px;
+        }
+        .menu-bar ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .active, .menu-bar ul li:hover {
+            background-color:#2bab0d ;
+            border-radius: 3px;
+        }
+        .menu-bar .fa {
+            margin-right: 8px;
+        }
+
+        .sub-menu-1 {
+            display: none ;
+        }
+        .menu-bar ul li:hover .sub-menu-1 {
+            display: block;
+            position: absolute;
+            background-color: rgb(73,201,192);
+            margin-top: 15px;
+            margin-left: -15px;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul {
+            display: block;
+            margin: 10px;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li {
+            width: 150px;
+            padding: 10px;
+            border-bottom: 1px dotted #fff;
+            background: transparent;
+            border-radius: 0;
+            text-align: left;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li:last-child {
+            border-bottom: none;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li a:hover {
+            color:  #b2ff00;
+        }
+        .fa-angle-right {
+            float: right;
+        }
+        .sub-menu-2 {
+            display: none;
+        }
+        .hover-me:hover .sub-menu-2 {
+            position: absolute;
+            display: block;
+            margin-top: -40px;
+            margin-left: 140px;
+            background: rgb(84,190,238);
+        }
+    </style>
+    <form class="box" action="index.html">
+        <h1>LOGIN</h1>
+        <input type="text" placeholder="Username"name=""class="usr">
+        <input type="text" placeholder="Password"name=""class="pwd">
+        <input type="submit" name="" value="Login" class="btn">
+    </form>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background : #344953;
+        }
+        .box{
+            width: 300px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #191919;
+            text-align: center;
+        }
+        .box .usr,.box .pwd {
+            border: 0;
+            display: block;
+            background: none;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: #fff;
+            border-radius: 24px;
+            transition: 0.7;
+        }
+        .box h1 {
+            color: white;
+            font: "baloo tammudu 2";
+            font-weight: 500;
+        }
+        .box .usr:focus..box .pwd:focus{
+            width: 280px;
+            border: 3px solid #50C878;
+        }
+        .btn{
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #50C878;
+            border-radius: 24px;
+            transition: 0.7;
+            padding: 14px 10px;
+            color: #fff;
+            opacity: 0.6;
+        }
+        .btn:hover{
+            background: #50C878;
+            opacity: 1;
+        }
+    </style>
+</body>
+</html>
