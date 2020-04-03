@@ -1,0 +1,169 @@
+<html>
+<head>
+    <title>drop down menu</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="hero-image">
+  <div class="hero-text">
+    <button>REGISTER</button>
+  </div>
+</div>
+    <div class="menu-bar">
+    <ul>
+        <li class="active"><a href="#"><i class="fa fa-home"></i>Home</a></li>
+
+        <li><a href="#"><i class="fa fa-user"></i>About Us</a>
+          <div class ="sub-menu-1">
+               <ul>
+                   <li><a href="#">Mission</a></li>
+                   <li><a href="#">Vission</a></li>
+                   <li><a href="#">Achievments</a></li>
+               </ul>
+           </div>
+        </li>
+        <li><a href="websiteservicessection.html"><i class="fa fa-clone"></i>Services</a>
+         <div class ="sub-menu-1">
+               <ul>
+                   <li class="hover-me"><a href="#">Web Development</a><i class="fa fa-angle-right"></i>
+                       <div class="sub-menu-2">
+                           <ul>
+                                <li><a href="#">Introduction</a></li>
+                                <li><a href="#">HTML&CSS</a></li>
+                                <li><a href="image.html">RoadMap WebDev</a></li>
+                                <li><a href="#">JAVASCRIPT</a></li>
+                           </ul>
+                         </div>
+                   </li>
+                   <li class="hover-me"><a href="webdesinging.html">Web Designing</a><i class="fa fa-angle-right"></i>
+                       <div class="sub-menu-2">
+                           <ul>
+                                <li><a href="webdesinging.html">Introduction</a></li>
+                                <li><a href="#">jqurey</a></li>
+
+                           </ul>
+                         </div>
+                   </li>
+                   <li class="hover-me"><a href="#">Marketing</a><i class="fa fa-angle-right"></i>
+                         <div class="sub-menu-2">
+                           <ul>
+                                <li><a href="#">SEO</a></li>
+                                <li><a href="#">Social Media</a></li>
+                                <li><a href="#">Eminal Marketing</a></li>
+                           </ul>
+                         </div>
+                   </li>
+                   <li class="hover-me"><a href="#">Mobile App</a><i class="fa fa-angle-right"></i>
+                       <div class="sub-menu-2">
+                          <ul>
+                             <li><a href="#">Android App</a></li>
+                             <li><a href="#">iOS App</a></li>
+                             <li><a href="#">Flutter App</a></li>
+                         </ul>
+                     </div>
+                    <li class="hover-me"><a href="checkbox.html">Intersets</a>
+                        <li class="hover-me"><a href="progressbar.html">Progress</a>
+               </ul>
+           </div>
+        </li>
+        <li><a href="#"><i class="fa fa-users"></i>Teams</a></li>
+        <li><a href="#"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+        <li><a href="loginpage1.html"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+    </ul>
+   </div>
+
+    <style>
+        .hero-text {
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:black;
+  cursor: pointer;
+  color: red;
+}
+
+        body{
+            background-image: url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .menu-bar {
+            background: rgb(0,128,128);
+            text-align: center;
+        }
+        .menu-bar ul {
+            display: inline-flex;
+            list-style: none;
+            color: white;
+        }
+        .menu-bar ul li {
+            width: 120px;
+            margin: 15px;
+            padding: 15px;
+        }
+        .menu-bar ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .active, .menu-bar ul li:hover {
+            background-color:#2bab0d ;
+            border-radius: 3px;
+        }
+        .menu-bar .fa {
+            margin-right: 8px;
+        }
+
+        .sub-menu-1 {
+            display: none ;
+        }
+        .menu-bar ul li:hover .sub-menu-1 {
+            display: block;
+            position: absolute;
+            background-color: rgb(73,201,192);
+            margin-top: 15px;
+            margin-left: -15px;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul {
+            display: block;
+            margin: 10px;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li {
+            width: 150px;
+            padding: 10px;
+            border-bottom: 1px dotted #fff;
+            background: transparent;
+            border-radius: 0;
+            text-align: left;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li:last-child {
+            border-bottom: none;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li a:hover {
+            color:  #b2ff00;
+        }
+        .fa-angle-right {
+            float: right;
+        }
+        .sub-menu-2 {
+            display: none;
+        }
+        .hover-me:hover .sub-menu-2 {
+            position: absolute;
+            display: block;
+            margin-top: -40px;
+            margin-left: 140px;
+            background: rgb(84,190,238);
+        }
+    </style>
+</body>
+</html>
