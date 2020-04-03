@@ -1,0 +1,316 @@
+html>
+<head>
+    <title>step progress bar</title>
+    <link rel="stylesheet"  type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <style type="text/css">
+
+       .container {
+            width: 100%;
+        }
+        .progressbar {
+            counter-reset: step;
+        }
+        .progressbar li {
+            list-style-type: none;
+            float: left;
+            width: 33.33%;
+            position: relative;
+            text-align: center;
+        }
+        .progressbar li:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 30px;
+            line-height: 30px;
+            height: 30px;
+            border:  1px solid #ddd;
+            display:  block;
+            text-align: center;
+            margin: 0 auto 10px auto;
+            background-color: white;
+            border-radius: 50%;
+        }
+        .progressbar li:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            top: 15px;
+            left: -50%;
+            z-index: -1;
+
+        }
+        .progressbar li:first-child:after {
+            content: none;
+        }
+        .progressbar li.active {
+            color: green;
+        }
+        .progressbar li.active:before{
+            border-color: green;
+        }
+        .progressbar li.active + li:after{
+            background-color: green;
+        }
+        .container1 {
+            padding: 20px;
+        }
+        .notificationbar {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        .notificationbar li i {
+            width: 30px;
+            height: 30px;
+            display: block;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            background-color: white;
+
+        }
+        .notificationbar li {
+            margin-top: 60px;
+        }
+        .notificationbar li i:after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            position: absolute;
+            background-color: #ddd;
+            margin-top: 15px;
+            z-index: -1;
+        }
+        .notificationbar li div {
+            margin-left: 50px;
+            margin-top: -30px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: white: ;
+
+        }
+        .notificationbar:after {
+            content: '';
+            width: 1px;
+            height: 100%;
+            background-color: #ddd;
+            position: absolute;
+            top: 4px;
+            left: 15px;
+            z-index: -1;
+        }
+        .checkbox {
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            position: relative;
+        }
+        .checkbox input[type="checkbox"] {
+            visibility: hidden;
+        }
+        .checkbox label {
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .checkbox label:before {
+            content: '';
+            width: 9px;
+            height: 5px;
+            border: 3px solid white;
+            position: absolute;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+            top: 8px;
+            left: 8px;
+            opacity: 0;
+        }
+        .checkbox input[type="checkbox"]:checked + label:before{
+            opacity: 1;
+        }
+        .checkbox input[type="checkbox"]:checked + label{
+            background-color: #57bba7;
+        }
+        body{
+            background-color: #6C3483;
+            background-image: linear-gradient(27deg, #004E95 50%, #013A6B 50%);
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .menu-bar {
+            background: rgb(0,128,128);
+            text-align: center;
+        }
+        .menu-bar ul {
+            display: inline-flex;
+            list-style: none;
+            color: white;
+        }
+        .menu-bar ul li {
+            width: 120px;
+            margin: 15px;
+            padding: 15px;
+        }
+        .menu-bar ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .active, .menu-bar ul li:hover {
+            background-color:#2bab0d ;
+            border-radius: 3px;
+        }
+        .menu-bar .fa {
+            margin-right: 8px;
+        }
+
+        .sub-menu-1 {
+            display: none ;
+        }
+        .menu-bar ul li:hover .sub-menu-1 {
+            display: block;
+            position: absolute;
+            background-color: rgb(73,201,192);
+            margin-top: 15px;
+            margin-left: -15px;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul {
+            display: block;
+            margin: 10px;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li {
+            width: 150px;
+            padding: 10px;
+            border-bottom: 1px dotted #fff;
+            background: transparent;
+            border-radius: 0;
+            text-align: left;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li:last-child {
+            border-bottom: none;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li a:hover {
+            color:  #b2ff00;
+        }
+        .fa-angle-right {
+            float: right;
+        }
+        .sub-menu-2 {
+            display: none;
+        }
+        .hover-me:hover .sub-menu-2 {
+            position: absolute;
+            display: block;
+            margin-top: -40px;
+            margin-left: 140px;
+            background: rgb(84,190,238);
+        }
+         </style>
+</head>
+<body>
+<div class="menu-bar">
+    <ul>
+        <li class="active"><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+
+        <li><a href="#"><i class="fa fa-user"></i>About Us</a>
+          <div class ="sub-menu-1">
+               <ul>
+                   <li><a href="#">Mission</a></li>
+                   <li><a href="#">Vission</a></li>
+                   <li><a href="#">Achievments</a></li>
+               </ul>
+           </div>
+        </li>
+        <li><a href="websiteservicessection.html"><i class="fa fa-clone"></i>Services</a>
+         <div class ="sub-menu-1">
+               <ul>
+                   <li class="hover-me"><a href="#">Web Development</a><i class="fa fa-angle-right"></i>
+                       <div class="sub-menu-2">
+                           <ul>
+                                <li><a href="#">Introduction</a></li>
+                                <li><a href="#">HTML&CSS</a></li>
+                                <li><a href="image.html">RoadMap WebDev</a></li>
+                                <li><a href="#">JAVASCRIPT</a></li>
+                           </ul>
+                         </div>
+                   </li>
+                   <li class="hover-me"><a href="webdesinging.html">Web Designing</a><i class="fa fa-angle-right"></i>
+                       <div class="sub-menu-2">
+                           <ul>
+                                <li><a href="webdesinging.html">Introduction</a></li>
+                                <li><a href="#">jqurey</a></li>
+
+                           </ul>
+                         </div>
+                   </li>
+                   <li class="hover-me"><a href="#">Marketing</a><i class="fa fa-angle-right"></i>
+                         <div class="sub-menu-2">
+                           <ul>
+                                <li><a href="#">SEO</a></li>
+                                <li><a href="#">Social Media</a></li>
+                                <li><a href="#">Eminal Marketing</a></li>
+                           </ul>
+                         </div>
+                   </li>
+                   <li class="hover-me"><a href="#">Mobile App</a><i class="fa fa-angle-right"></i>
+                       <div class="sub-menu-2">
+                          <ul>
+                             <li><a href="#">Android App</a></li>
+                             <li><a href="#">iOS App</a></li>
+                             <li><a href="#">Flutter App</a></li>
+                         </ul>
+                     </div>
+                    <li class="hover-me"><a href="checkbox.html">Intersets</a>
+                        <li class="hover-me"><a href="progressbar.html">Progress</a>
+               </ul>
+           </div>
+        </li>
+        <li><a href="#"><i class="fa fa-users"></i>Teams</a></li>
+        <li><a href="#"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+        <li><a href="loginpage1.html"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+    </ul>
+   </div>
+    <div class="checkbox">
+        <input type="checkbox"id="checkbox1">
+        <label for="checkbox1"></label>
+    </div>
+    <div class="container">
+            <ul class="progressbar">
+                <li class="active">Introduction</li>
+                <li>Quiz</li>
+                <li>Marks</li>
+            </ul>
+    </div>
+    <div class="container1">
+        <ul class="notificationbar">
+            <li>
+                <i class="ion-checkmark"></i>
+                <div>Dashboard</div>
+            </li>
+            <li>
+                <i class="ion-paper-airplane"></i>
+                <div>Account Setting</div>
+            </li>
+            <li>
+                <i class="ion-plus"></i>
+                <div>Add To Playlists</div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
